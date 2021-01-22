@@ -36,6 +36,8 @@ Vue.config.productionTip = false;
 // Globally register autoimport components
 import "@/components/globals/globals.js";
 
+import vuetify from "./plugins/vuetify";
+
 let BASE_URL = "";
 if (process.env.NODE_ENV === "development") {
   BASE_URL = "http://localhost:10000";
@@ -78,6 +80,7 @@ Vue.use(require("vue-moment"), {
 new Vue({
   router,
   store,
+
   mounted: function () {
     this.$nextTick(() => {
       window.addEventListener("resize", () =>
@@ -107,5 +110,7 @@ new Vue({
       /* eslint-enable no-console */
     });
   },
+
+  vuetify,
   render: (h) => h(App),
 }).$mount("#app");

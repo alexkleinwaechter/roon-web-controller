@@ -1,6 +1,5 @@
 module.exports = {
   publicPath: "",
-
   pwa: {
     name: "Roon Web Controller",
     themeColor: "#2C3E50",
@@ -12,4 +11,5 @@ module.exports = {
       display: "fullscreen",
     },
   },
+  transpileDependencies: ["vuetify"],
 };
