@@ -4,13 +4,13 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: [
+    // {
+    //   path: "/",
+    //   name: "SelectLayout",
+    //   component: () => import("@/layouts/SelectLayout.vue"),
+    // },
     {
       path: "/",
-      name: "SelectLayout",
-      component: () => import("@/layouts/SelectLayout.vue"),
-    },
-    {
-      path: "/touchscreen",
       name: "Touchscreen",
       component: () => import("@/layouts/Touchscreen.vue"),
       children: [

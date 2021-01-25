@@ -1,18 +1,34 @@
 <template lang="html">
-  <div id="app" data-name="app">
-    <SvgSpriteMediaControlsCircle
-      v-if="settings.general.use_circle_icons === true"
-    />
-    <SvgSpriteMediaControlsDefault v-else />
-    <SvgSpriteMiscIcons />
-    <AppDesktopNotifications />
-    <AppBrowserTitle />
-    <router-view v-if="sw.paired && sw.paired === true" class="app_content" />
-    <p v-else>
-      The {{ sw.name }} extension is not enabled. Please use an official Roon
-      client to enable it.
-    </p>
-  </div>
+  <v-app>
+    <!-- <v-app-bar app>
+    </v-app-bar> -->
+
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+      <SvgSpriteMediaControlsCircle
+        v-if="settings.general.use_circle_icons === true"
+      />
+      <SvgSpriteMediaControlsDefault v-else />
+      <SvgSpriteMiscIcons />
+      <AppDesktopNotifications />
+      <AppBrowserTitle />        
+        <router-view
+          v-if="sw.paired && sw.paired === true"
+          class="app_content"
+        />
+        <p v-else>
+          The {{ sw.name }} extension is not enabled. Please use an official
+          Roon client to enable it.
+        </p>
+      </v-container>
+    </v-main>
+
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
@@ -46,15 +62,3 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-.app_content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.svg_sprite {
-  display: none;
-}
-</style>

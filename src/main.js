@@ -24,19 +24,18 @@ SOFTWARE.
 */
 
 import Vue from "vue";
+import vuetify from "./plugins/vuetify";
 import App from "./App.vue";
 import VueSocketio from "vue-socket.io";
 // import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import moment from "moment";
-
-Vue.config.productionTip = false;
-
 // Globally register autoimport components
 import "@/components/globals/globals.js";
 
-import vuetify from "./plugins/vuetify";
+Vue.config.productionTip = false;
+
 
 let BASE_URL = "";
 if (process.env.NODE_ENV === "development") {
